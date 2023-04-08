@@ -20,27 +20,32 @@ public class AdminService {
         if(admin.getLogin().containsKey(name)){
             if(admin.getLogin().get(name).equals(password)){
                service=new Service();
-                System.out.println("Do you want to add service!y/n");
-                String flag=sc.next();
-                boolean user=true;
-                if(flag.equals("y")) {
-                    System.out.println("Enter no of vehicle you want to add in service list...");
-                    int n=sc.nextInt();
-                    for(int i=0; i<n; i++) {
-                        addService();
-                    }
-                    System.out.println("Do you want to open user dashboard!y/n");
-                    flag= sc.next();
-                    if(!flag.equals("y")) {
-                        user = false;
-                    }
+               String cnt="";
+               do {
+                    System.out.println("Do you want to add service!y/n");
+                    String flag = sc.next();
+                    boolean user = true;
+                    if (flag.equals("y")) {
+                        System.out.println("Enter no of vehicle you want to add in service list...");
+                        int n = sc.nextInt();
+                        for (int i = 0; i < n; i++) {
+                            addService();
+                        }
+                        System.out.println("Do you want to open user dashboard!y/n");
+                        flag = sc.next();
+                        if (!flag.equals("y")) {
+                            user = false;
+                        }
 
-                }
-                if(user){
-                    System.out.println("User service dashboard!");
-                    UserInput userInput=new UserInput(service);
-                    userInput.inputFunction();
-                }
+                    }
+                    if (user) {
+                        System.out.println("User service dashboard!");
+                        UserInput userInput = new UserInput(service);
+                        userInput.inputFunction();
+                    }
+                   System.out.println("Do you want to continue! y/n");
+                    cnt=sc.next();
+                }while(cnt.equals("y"));
             }
             else{
                 System.out.println("Enter valid password...");
@@ -70,4 +75,5 @@ public class AdminService {
         service.setServices(services);
     }
 }
+
 
