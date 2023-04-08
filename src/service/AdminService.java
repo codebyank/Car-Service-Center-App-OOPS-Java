@@ -47,7 +47,7 @@ public class AdminService {
     private void addService() {
         HashMap<String,Integer> map=new HashMap<>();
         System.out.println("Enter type of vehicle...");
-        String vehicle=sc.next();
+     String vehicle=sc.next().toLowerCase();
         System.out.println("Enter no of service which you want to add...");
         int n=sc.nextInt();
         System.out.println("Enter serviceCode and charge...");
