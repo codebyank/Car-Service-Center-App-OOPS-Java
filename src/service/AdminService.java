@@ -22,8 +22,13 @@ public class AdminService {
                service=new Service();
                 System.out.println("Do you want to add service!y/n");
                 String flag=sc.next();
-                if(flag.equals("y"))
-                addService();
+               if(flag.equals("y")) {
+                    System.out.println("Enter no of vehicle you want to add in service list...");
+                    int n=sc.nextInt();
+                    for(int i=0; i<n; i++) {
+                        addService();
+                    }
+                }
                 else{
                     System.out.println("User service dashboard!");
                     UserInput userInput=new UserInput(service);
