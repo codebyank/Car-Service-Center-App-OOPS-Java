@@ -17,10 +17,14 @@ public class UserInput {
     }
 
     public void inputFunction() {
-        System.out.println("Enter your vehicle type...");
-        String vehicle=sc.next();
+       System.out.println("Enter your vehicle type...");
+        String vehicle=sc.next().toLowerCase();
         //System.out.println("Type of vehicle is : "+vehicle);
         BillingService billingService=new BillingService();
+        if(!service.getServices().containsKey(vehicle)){
+            System.out.println("Not available services for this vehicle!");
+            return;
+        }
         billingService.generateBill(vehicle,service.getServices().get(vehicle));
     }
 }
