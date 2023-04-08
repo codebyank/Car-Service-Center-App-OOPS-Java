@@ -7,7 +7,9 @@
 - Admin needs to login the app.
 - Admin choose to open user dashboard or adding new services.
 ![1](https://user-images.githubusercontent.com/109346750/230660386-0deaf15d-4718-4cee-b632-85f92a76f29f.png)
-
+## Admin Users
+- Name-Ankit, Password-ankit@123.
+- Name-Sonu, Password-sonu@123.
 ## Usage
 - Bill generator for service center.
 - User choose no of service and sevice code then app generate the bill for user.
