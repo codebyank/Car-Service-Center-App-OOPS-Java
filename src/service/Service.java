@@ -14,7 +14,7 @@ public class Service {
             hatchback.put("CF01", 2000);
             hatchback.put("BF01", 1000);
             hatchback.put("GF01", 3000);
-            this.services.put("Hatchback", hatchback);
+            this.services.put("hatchback", hatchback);
 
             HashMap<String, Integer> sedan = new HashMap<>();
             sedan.put("BS01", 4000);
@@ -22,7 +22,7 @@ public class Service {
             sedan.put("CF01", 4000);
             sedan.put("BF01", 1500);
             sedan.put("GF01", 6000);
-            this.services.put("Sedan", sedan);
+            this.services.put("sedan", sedan);
 
             HashMap<String, Integer> suv = new HashMap<>();
             suv.put("BS01", 5000);
@@ -30,7 +30,7 @@ public class Service {
             suv.put("CF01", 6000);
             suv.put("BF01", 2500);
             suv.put("GF01", 8000);
-            this.services.put("SUV", suv);
+            this.services.put("suv", suv);
 
         }
 
