@@ -22,14 +22,21 @@ public class AdminService {
                service=new Service();
                 System.out.println("Do you want to add service!y/n");
                 String flag=sc.next();
-               if(flag.equals("y")) {
+                boolean user=true;
+                if(flag.equals("y")) {
                     System.out.println("Enter no of vehicle you want to add in service list...");
                     int n=sc.nextInt();
                     for(int i=0; i<n; i++) {
                         addService();
                     }
+                    System.out.println("Do you want to open user dashboard!y/n");
+                    flag= sc.next();
+                    if(!flag.equals("y")) {
+                        user = false;
+                    }
+
                 }
-                else{
+                if(user){
                     System.out.println("User service dashboard!");
                     UserInput userInput=new UserInput(service);
                     userInput.inputFunction();
@@ -37,22 +44,24 @@ public class AdminService {
             }
             else{
                 System.out.println("Enter valid password...");
+                return;
             }
         }
         else{
             System.out.println("Enter valid user...");
+            return;
         }
      }
 
     private void addService() {
         HashMap<String,Integer> map=new HashMap<>();
         System.out.println("Enter type of vehicle...");
-     String vehicle=sc.next().toLowerCase();
+        String vehicle=sc.next().toLowerCase();
         System.out.println("Enter no of service which you want to add...");
         int n=sc.nextInt();
         System.out.println("Enter serviceCode and charge...");
         for(int i=0; i<n; i++){
-            String code=sc.next();
+            String code=sc.next().toUpperCase();
             int charge=sc.nextInt();
             map.put(code,charge);
         }
@@ -61,3 +70,4 @@ public class AdminService {
         service.setServices(services);
     }
 }
+
