@@ -12,6 +12,8 @@ public class BillingService implements IBillingService{
     }
 
     public void generateBill(String name,HashMap<String,Integer> prices){
+
+
        // System.out.println(prices);
         System.out.println("Available services !");
        // System.out.println("Service\t\t\t code  charge");
@@ -38,6 +40,10 @@ public class BillingService implements IBillingService{
                     System.out.println("Clutch fixing\t" + "CF01\t" + val.getValue()+"Rs.");
                     break;
                 }
+                default:{
+                    System.out.println("General Servicing\t" + s+"\t" + val.getValue()+"Rs.");
+                    break;
+                }
 
             }
         }
@@ -51,6 +57,7 @@ public class BillingService implements IBillingService{
         }
         System.out.println("Type of car : "+name);
         for(String s:serviceList){
+            s=s.toUpperCase();
             switch (s) {
                 case "BS01":
                 {
@@ -75,6 +82,10 @@ public class BillingService implements IBillingService{
                 case "CF01":
                 {
                     System.out.println("Charge for clutch fixing is : " + prices.get(s)+"Rs.");
+                    break;
+                }
+                default:{
+                    System.out.println("Charge for general servicing is : " + prices.get(s)+"Rs.");
                     break;
                 }
 
