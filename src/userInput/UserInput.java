@@ -25,12 +25,9 @@ public class UserInput {
             System.out.println("Not available services for this vehicle!");
             return;
         }
-        String flag="";
-        do {
+        
             billingService.generateBill(vehicle, service.getServices().get(vehicle));
-            System.out.println("Do you want to continue!y/n");
-            flag=sc.next();
-        }while(flag.equals("y"));
+        
     }
 }
 
