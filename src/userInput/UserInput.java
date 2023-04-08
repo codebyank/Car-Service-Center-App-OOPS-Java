@@ -17,7 +17,7 @@ public class UserInput {
     }
 
     public void inputFunction() {
-       System.out.println("Enter your vehicle type...");
+        System.out.println("Enter your vehicle type...");
         String vehicle=sc.next().toLowerCase();
         //System.out.println("Type of vehicle is : "+vehicle);
         BillingService billingService=new BillingService();
@@ -25,6 +25,12 @@ public class UserInput {
             System.out.println("Not available services for this vehicle!");
             return;
         }
-        billingService.generateBill(vehicle,service.getServices().get(vehicle));
+        String flag="";
+        do {
+            billingService.generateBill(vehicle, service.getServices().get(vehicle));
+            System.out.println("Do you want to continue!y/n");
+            flag=sc.next();
+        }while(flag.equals("y"));
     }
 }
+
