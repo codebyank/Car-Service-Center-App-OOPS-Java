@@ -11,12 +11,13 @@ public class BillingService implements IBillingService{
         this.charge =0;
     }
 
-    public void generateBill(String name,HashMap<String,Integer> prices){
+    @Override
+    public void printAllServices(HashMap<String,Integer> prices){
+        // System.out.println(prices);
 
 
-       // System.out.println(prices);
         System.out.println("Available services !");
-       // System.out.println("Service\t\t\t code  charge");
+        // System.out.println("Service\t\t\t code  charge");
         for(Map.Entry<String,Integer>val: prices.entrySet()){
             String s= val.getKey();
             switch (s) {
@@ -47,6 +48,11 @@ public class BillingService implements IBillingService{
 
             }
         }
+    }
+
+
+    public void generateBill(String name,HashMap<String,Integer> prices){
+        printAllServices(prices);
         System.out.println("Enter no of service you want...");
         int n=sc.nextInt();
         System.out.println("Enter service_code...");
@@ -99,3 +105,4 @@ public class BillingService implements IBillingService{
         }
     }
 }
+
