@@ -50,7 +50,7 @@ public class BillingService implements IBillingService{
         }
     }
 
-
+ @Override
     public void generateBill(String name,HashMap<String,Integer> prices){
         printAllServices(prices);
         System.out.println("Enter no of service you want...");
